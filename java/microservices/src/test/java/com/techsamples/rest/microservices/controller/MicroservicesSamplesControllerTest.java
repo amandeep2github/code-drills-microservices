@@ -16,10 +16,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
 //@AutoConfigureMockMvc
 //@ContextConfiguration(classes = {})
-//@WebMvcTest
+@WebMvcTest
 public class MicroservicesSamplesControllerTest {
 
     @Autowired
@@ -29,6 +28,6 @@ public class MicroservicesSamplesControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/message"))
                 .andExpect(status().isOk())
                 .andReturn();
-        Assertions.assertEquals("Microservices Samples", mvcResult.getResponse().getContentAsString());
+        Assertions.assertEquals("{\"message\":\"Microservices Samples\"}", mvcResult.getResponse().getContentAsString());
     }
 }

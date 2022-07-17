@@ -11,6 +11,10 @@ Path variables are very important as they are part of rest endpoint.
 to retrieve posts, there can't be posts without users
 > GET /users/1/posts
 
+```
+ curl -X POST http://localhost:8080/users -d'{"firstName":"AD"}' -H'Content-Type:application/json'
+```
+
 
 
 
